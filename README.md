@@ -24,3 +24,12 @@ Ketika client dan server memiliki port yang sama misal 8080, aplikasi akan berja
 Namun, jika misalnya kita hanya mengubah salah satu port, misalnya port server menjadi 8080 dan port client tetap 2000, maka akan terjadi error pada client karena menurut client port tersebut tidak memiliki koneksi dan program akan crash saat dijalankan dalam foto di bawah ini. <br>
 ![Server Side with different port](assets/images/server_different_port.png) <br>
 ![Client Side with different port](assets/images/client_different_port.png) <br>
+
+#### 2.3. Small changes. Add some information to client
+![Server 2](assets/images/server2.png) <br>
+![Client 5](assets/images/client5.png) <br>
+![Client 6](assets/images/client6.png) <br>
+Hasil pada gambar di atas dicapai dengan mengubah kode dalam <code>bin/server.rs</code> dan <code>bin/client.rs</code> menjadi sebagai berikut. <br>
+![Server Code](assets/images/server_code.png) <br>
+![Client Code](assets/images/client_code.png) <br>
+Perubahan tersebut dilakukan agar ketika bcast.tx (yang merupakan sender) mengirimkan pesan ke setiap client, akan menyertakan alamat pengirim teks melalui variabel addr.
